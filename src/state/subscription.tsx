@@ -7,5 +7,5 @@ export const authState = atom({
 
 export const userState = atom({
   key: 'loginCredential',
-  default: { username: '', email: '', password: ''},
+  default: { username: 'Sergey Golberg', email: '', password: ''},
 });

@@ -19,9 +19,9 @@ function getItem(
 
 const items: MenuProps['items'] = [
   getItem('DashBoard', 'sub1', <AppstoreOutlined style={{ fontSize: '24px', color: '#FF402BFF' }} />),
-  getItem('Mission', 'sub2', <DownloadOutlined style={{ fontSize: '24px', color: '#565D6DFF' }} />),
-  getItem('Media', 'sub3', <ExceptionOutlined style={{ fontSize: '24px', color: '#565D6DFF' }}/>),
-  getItem('Analytics', 'sub4', <BarChartOutlined style={{ fontSize: '24px', color: '#565D6DFF' }}/>)
+  getItem('Mission', 'sub2', <DownloadOutlined style={{ fontSize: '24px', color: '#FF402BFF' }} />),
+  getItem('Media', 'sub3', <ExceptionOutlined style={{ fontSize: '24px', color: '#FF402BFF' }}/>),
+  getItem('Analytics', 'sub4', <BarChartOutlined style={{ fontSize: '24px', color: '#FF402BFF' }}/>)
 ]
 
 function MenuNavBar() {

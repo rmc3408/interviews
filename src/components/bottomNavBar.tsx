@@ -1,7 +1,10 @@
-import { Avatar } from 'antd'
-import { Col, Row } from 'antd'
+import { useRecoilState } from 'recoil'
+import { userState } from '../state/subscription'
+import { Avatar, Col, Row } from 'antd'
+
 
 function BottomNavBar() {
+  const [user , setUser] = useRecoilState(userState)
   return (
     <Row>
       <Col span={6}>
@@ -9,8 +12,8 @@ function BottomNavBar() {
       </Col>
       <Col span={18}>
         <Row>
-          <Col span={24}><b>Sergey Golberg</b></Col>
-          <Col span={24}>company@example.com</Col>
+          <Col span={24}><b>{user.username}</b></Col>
+          <Col span={24}>{user.email}</Col>
         </Row>
       </Col>
     </Row>
