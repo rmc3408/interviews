@@ -1,67 +1,38 @@
-import * as React from 'react';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 
+import { PieChart, Pie, Legend} from 'recharts';
+  
 
-// Generate Sales Data
-function createData(time: string, amount?: number) {
-  return { time, amount };
-}
-
-const data = [
-  createData('00:00', 0),
-  createData('03:00', 300),
-  createData('06:00', 600),
-  createData('09:00', 800),
-  createData('12:00', 1500),
-  createData('15:00', 2000),
-  createData('18:00', 2400),
-  createData('21:00', 2400),
-  createData('24:00', undefined),
-];
-
-export default function Chart() {
-
+const renderColorfulLegendText = (value: string, entry: any) => {
   return (
-    <React.Fragment>
-      <ResponsiveContainer>
-        <LineChart
-          data={data}
-          margin={{
-            top: 16,
-            right: 16,
-            bottom: 0,
-            left: 24,
-          }}
-        >
-          <XAxis
-            dataKey="time"
-            //stroke={}
-            //style={}
-          />
-          <YAxis
-            //stroke={}
-            //style={}
-          >
-            <Label
-              angle={270}
-              position="left"
-              style={{
-                textAnchor: 'middle',
-                //fill: ,
-              }}
-            >
-              Sales ($)
-            </Label>
-          </YAxis>
-          <Line
-            isAnimationActive={false}
-            type="monotone"
-            dataKey="amount"
-            //stroke={}
-            dot={false}
-          />
-        </LineChart>
-      </ResponsiveContainer>
-    </React.Fragment>
+    <span style={{ color: "#596579", fontWeight: 500, padding: "10px" }}>
+      {value}
+    </span>
   );
+};
+  
+function Chart() {
+  
+// Sample data
+const data = [
+  {name: 'Luxuo', students: 350, fill: "#0088FE" },
+  {name: 'Mens-Folio', students: 700, fill: "#00C49F"},
+  {name: 'Grazia', students: 700, fill: "#FF8042"}
+];
+  
+  
+return (
+        <PieChart width={400} height={300}>
+          <Legend
+            height={50}
+            iconType="circle"
+            layout="vertical"
+            verticalAlign='middle'
+            align="right"
+            iconSize={16}
+            formatter={renderColorfulLegendText} />
+          <Pie data={data} dataKey="students" outerRadius={120} innerRadius={70} />
+        </PieChart>
+);
 }
+  
+export default Chart;

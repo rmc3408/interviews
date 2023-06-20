@@ -5,6 +5,7 @@ import TopNavBar from '../components/topNavBar'
 import BottomNavBar from '../components/bottomNavBar'
 import { styled } from 'styled-components'
 import DashboardHeader from '../components/dashboard/header'
+import DashboardContent from '../components/dashboard/content'
 const { Header, Sider, Content } = Layout
 //import { mainListItems, secondaryListItems } from '../components/listItems'
 //import Chart from '../components/chart'
@@ -24,8 +25,6 @@ const headerStyle: React.CSSProperties = {
 const contentStyle: React.CSSProperties = {
   textAlign: 'center',
   height: '80vh',
-  color: '#fff',
-  backgroundColor: '#108ee9',
 }
 
 const SiderNavBar = styled(Sider)`
@@ -55,7 +54,7 @@ function DashboardLayout() {
         <Divider type="vertical" style={{ margin: 0}} />
         <Layout>
           <Header style={headerStyle}><DashboardHeader /></Header>
-          <Content style={contentStyle}>Content</Content>
+          <Content style={contentStyle}><DashboardContent /></Content>
         </Layout>
       </Layout>
     </Space>
