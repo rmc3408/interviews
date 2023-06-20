@@ -1,9 +1,10 @@
 import * as React from 'react'
-import { Layout, Space } from 'antd'
+import { Layout, Space, Divider } from 'antd'
 import NavBar from '../components/menuNavBar'
 import TopNavBar from '../components/topNavBar'
 import BottomNavBar from '../components/bottomNavBar'
 import { styled } from 'styled-components'
+import DashboardHeader from '../components/dashboard/header'
 const { Header, Sider, Content } = Layout
 //import { mainListItems, secondaryListItems } from '../components/listItems'
 //import Chart from '../components/chart'
@@ -12,13 +13,12 @@ const { Header, Sider, Content } = Layout
 const siderStyle: React.CSSProperties = {
   padding: '16px',
   backgroundColor: '#FFFFFF',
+  //borderRight: '1px solid gray'
 }
 
 const headerStyle: React.CSSProperties = {
-  textAlign: 'center',
-  color: '#fff',
   height: '20vh',
-  backgroundColor: '#7dbcea',
+  backgroundColor: '#fff',
 }
 
 const contentStyle: React.CSSProperties = {
@@ -43,7 +43,7 @@ function DashboardLayout() {
   return (
     <Space
       direction="vertical"
-      wrap
+      size={[0, 48]}
       style={{ fontSize: 'inherit', width: '100%', height: '100%', boxSizing: 'border-box' }}
     >
       <Layout style={{ fontSize: 'inherit' }}>
@@ -52,8 +52,9 @@ function DashboardLayout() {
           <NavBar />
           <BottomNavBar />
         </SiderNavBar>
+        <Divider type="vertical" style={{ margin: 0}} />
         <Layout>
-          <Header style={headerStyle}>Header</Header>
+          <Header style={headerStyle}><DashboardHeader /></Header>
           <Content style={contentStyle}>Content</Content>
         </Layout>
       </Layout>

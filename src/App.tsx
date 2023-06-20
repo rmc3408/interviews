@@ -1,6 +1,6 @@
 
 import { useRecoilState } from 'recoil';
-import LoginPage from './pages/initial';
+import LoginPage from './pages/loginPage';
 import Dashboard from './pages/dashboard';
 import { authState } from './state/subscription';
 

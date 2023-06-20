@@ -1,6 +1,6 @@
 import { Row } from 'antd'
 import { styled } from 'styled-components'
-import Login from './login'
+import LoginForm from '../components/loginForm'
 import { Typography, Avatar } from 'antd'
 
 const { Title } = Typography
@@ -28,7 +28,6 @@ const WelcomeLoginBox = styled.div`
   margin: 0 10%;
   text-align: center;
   z-index: 1;
-  
 `
 
 function LoginPage() {
@@ -36,10 +35,10 @@ function LoginPage() {
     <>
       <Row>
         <WelcomeLoginBox>
-          <Avatar size={48} style={{ margin: '48px auto 140px auto '}} src={<img src={'logo.png'} alt="avatar" />} />
+          <Avatar size={48} style={{ margin: '48px auto 140px auto ' }} src={<img src={'logo.png'} alt="avatar" />} />
           <Title level={1}>Welcome Back!</Title>
           <p>Enter your credentials to access your account</p>
-          <Login />
+          <LoginForm />
         </WelcomeLoginBox>
         <MainPageBackground />
         <PersonBackground src="person.png" alt="person" />
