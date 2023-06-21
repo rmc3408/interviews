@@ -1,20 +1,17 @@
 import * as React from 'react'
 import { Layout, Space, Divider } from 'antd'
-import NavBar from '../components/menuNavBar'
-import TopNavBar from '../components/topNavBar'
-import BottomNavBar from '../components/bottomNavBar'
+import NavBar from '../components/navbar/menuNavBar'
+import TopNavBar from '../components/navbar/topNavBar'
+import BottomNavBar from '../components/navbar/bottomNavBar'
 import { styled } from 'styled-components'
 import DashboardHeader from '../components/dashboard/header'
 import DashboardContent from '../components/dashboard/content'
 const { Header, Sider, Content } = Layout
-//import { mainListItems, secondaryListItems } from '../components/listItems'
-//import Chart from '../components/chart'
-//import Orders from '../components/orders'
+
 
 const siderStyle: React.CSSProperties = {
   padding: '16px',
   backgroundColor: '#FFFFFF',
-  //borderRight: '1px solid gray'
 }
 
 const headerStyle: React.CSSProperties = {
@@ -23,8 +20,8 @@ const headerStyle: React.CSSProperties = {
 }
 
 const contentStyle: React.CSSProperties = {
-  textAlign: 'center',
   height: '80vh',
+  backgroundColor: '#fbfafa',
 }
 
 const SiderNavBar = styled(Sider)`
@@ -38,26 +35,34 @@ const SiderNavBar = styled(Sider)`
   }
 `
 
+const TopLevelSpace = styled(Space)`
+  font-size: inherit;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+`;
+
+
 function DashboardLayout() {
   return (
-    <Space
-      direction="vertical"
-      size={[0, 48]}
-      style={{ fontSize: 'inherit', width: '100%', height: '100%', boxSizing: 'border-box' }}
-    >
+    <TopLevelSpace direction="vertical">
       <Layout style={{ fontSize: 'inherit' }}>
         <SiderNavBar width={252} style={siderStyle}>
           <TopNavBar />
           <NavBar />
           <BottomNavBar />
         </SiderNavBar>
-        <Divider type="vertical" style={{ margin: 0}} />
+        <Divider type="vertical" style={{ margin: 0 }} />
         <Layout>
-          <Header style={headerStyle}><DashboardHeader /></Header>
-          <Content style={contentStyle}><DashboardContent /></Content>
+          <Header style={headerStyle}>
+            <DashboardHeader />
+          </Header>
+          <Content style={contentStyle}>
+            <DashboardContent />
+          </Content>
         </Layout>
       </Layout>
-    </Space>
+    </TopLevelSpace>
   )
 }
 

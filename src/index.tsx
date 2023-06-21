@@ -7,16 +7,19 @@ import { RecoilRoot } from 'recoil'
 import { ConfigProvider } from 'antd'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
+const ThemeTokens = {
+  colorPrimary: '#FF402BFF', 
+  colorLink: '##FF402BFF',
+  colorLinkActive: '##FF402BFF',
+  colorText: '##323743FF',
+  fontFamily: 'Arial'
+}
+
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-      <ConfigProvider theme={{ token: { 
-        colorPrimary: '#FF402BFF', 
-        colorLink: '##FF402BFF',
-        colorLinkActive: '##FF402BFF',
-        colorInfoActive: '##FF402BFF',
-        fontFamily: 'Arial'
-        } }}>
+      <ConfigProvider theme={{ token: ThemeTokens }}>
         <App />
       </ConfigProvider>
     </RecoilRoot>
