@@ -47,7 +47,6 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           zip -r build.zip ./build
-          zip -r coverage.zip ./coverage
       - name: Create a versioning by semantic
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx semantic-release
