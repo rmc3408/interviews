@@ -23,7 +23,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18.x'
-      
        - name: Install Vercel CLI
         if: github.event_name == 'push'
         run: npm install --global vercel@latest
