@@ -47,11 +47,6 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           zip -r build.zip ./build
-      - name: Create a versioning by semantic
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy Project Artifacts to Staging
         if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
