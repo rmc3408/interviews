@@ -28,6 +28,7 @@ const EmpregadoListPage = () => {
         setEmpresa(data.nome)
     }
 
+    console.log(empregados, empresa, empresaId)
     return (
         <div className='notes'>
             <div className='notes-header'>
@@ -41,7 +42,7 @@ const EmpregadoListPage = () => {
                     <ListEmpregados key={index} person={person} companyName={empresa} />
                 ))}
             </div>
-            <AddButton />
+            <AddButton empresaId={empresaId} />
         </div>
     )
 }

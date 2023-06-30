@@ -1,11 +1,5 @@
-from .models import Note, Empresa, Empregado
+from .models import Empresa, Empregado
 from rest_framework.serializers import ModelSerializer
-
-
-class NoteSerializer(ModelSerializer):
-    class Meta:
-        model = Note
-        fields = '__all__'
 
 
 class EmpresaSerializer(ModelSerializer):
@@ -20,7 +14,17 @@ class EmpresaNomeSerializer(ModelSerializer):
         fields = ['id', 'nome']
 
 
+class EmpregadoSemCompanySerializer(ModelSerializer):
+    class Meta:
+        model = Empregado
+        fields = ['id', 'nome', 'entrada', 'saida', 'feriasEntrada', 'feriasSaida']
+
+
 class EmpregadoSerializer(ModelSerializer):
+    company = EmpresaSerializer()
+    
     class Meta:
         model = Empregado
         fields = '__all__'
+
+

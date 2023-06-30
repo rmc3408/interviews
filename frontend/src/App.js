@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         element: <EmpregadoListPage />,
     },
     {
-        path: '/empregados/edit/:id',
+        path: '/empregados/:task/:id',
         element: <EmpregadoPage />,
     },
     {

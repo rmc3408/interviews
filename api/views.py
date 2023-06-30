@@ -1,9 +1,10 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .tests import mockRoutes
-from .models import Note, Empresa, Empregado
-from .serializers import NoteSerializer, EmpresaSerializer, EmpregadoSerializer, EmpresaNomeSerializer
-
+from .models import Empresa, Empregado
+from .serializers import EmpresaSerializer, EmpregadoSerializer, EmpregadoSemCompanySerializer, EmpresaNomeSerializer
+from datetime import date
+from rest_framework import status
 
 
 ############################
@@ -81,3 +82,41 @@ def getEmpregado(request, id):
     serializer = EmpregadoSerializer(empregado, many=False)
     return Response(serializer.data)
 
+
+@api_view(['PUT'])
+def updateEmpregado(request, id):
+    data = request.data
+    empregado = Empregado.objects.get(id=id)
+    serialized = EmpregadoSerializer(instance=empregado, data=data)
+
+    if serialized.is_valid():
+        serialized.save()
+    
+    return Response(serialized.data)
+
+
+@api_view(['DELETE'])
+def deleteEmpregado(request, id):
+    empregado = Empregado.objects.get(id=id)
+    empregado.delete()
+    return Response('Company deleted with {{id}}')
+
+
+@api_view(['POST'])
+def createEmpregado(request):
+    companyFound = Empresa.objects.get(id=request.data['company'])
+    novaEmpresa = Empregado.objects.create(
+        nome=request.data['nome'],
+        company=companyFound,
+        saida=request.data['saida'],
+        entrada=request.data['entrada'],
+        feriasEntrada=request.data['feriasEntrada'],
+        feriasSaida=request.data['feriasSaida'],
+    )
+    serialized = EmpregadoSemCompanySerializer(instance=novaEmpresa, data=request.data, many=False)
+
+    if (serialized.is_valid()):
+        serialized.save()
+        return Response(serialized.data, status=status.HTTP_201_CREATED)
+    else:
+        return Response(serialized.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -3,9 +3,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ReactComponent as AddIcon } from '../assets/add.svg'
 import { ReactComponent as ArrowLeft } from '../assets/arrow-left.svg'
 
-export const AddButton = () => {
+export const AddButton = ({ empresaId }) => {
+    const redirectCompany = !empresaId ? '/new' : `/empregados/create/${empresaId}`
     return (
-        <Link to={'/new'} className='floating-button'>
+        <Link to={redirectCompany} className='floating-button'>
             <AddIcon />
         </Link>
     )
