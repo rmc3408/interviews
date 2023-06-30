@@ -64,7 +64,7 @@ const EmpresaPage = () => {
                 {empresaId == 'new' ? (
                     <button onClick={createNote} disabled={empresas?.nome == ''}> Done</button>
                 ) : (
-                    <div>
+                    <div className='buttons-delete-update'>
                         <button onClick={deleteNote}>Delete</button>
                         <button onClick={updateNote}>Update</button>
                     </div>
