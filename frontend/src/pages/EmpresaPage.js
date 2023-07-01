@@ -65,9 +65,9 @@ const EmpresaPage = () => {
             <div className='note-header'>
                 <BackButton />
                 {empresaId == 'new' ? (
-                   user.is_staff && <button onClick={createNote}>Done </button>
+                   user?.is_staff && <button onClick={createNote}>Done </button>
                 ) : (
-                    user.is_staff && (<div className='buttons-delete-update'>
+                    user?.is_staff && (<div className='buttons-delete-update'>
                         <button onClick={deleteNote}>Delete</button>
                         <button onClick={updateNote}>Update</button>
                     </div>)

@@ -44,10 +44,11 @@ export const AuthProvider = ({ children }) => {
     }
 
     let logoutUser = () => {
-        setAuthTokens(null)
-        setUser(null)
+        
         localStorage.removeItem('authTokens')
         localStorage.removeItem('user')
+        setAuthTokens(null)
+        setUser(null)
     }
 
     let updateToken = async () => {

@@ -31,7 +31,7 @@ const EmpresaListPage = () => {
                     <ListItemEmpresas key={index} empresa={empresa} />
                 ))}
             </div>
-            {user.is_staff && <AddButton />}
+            {user?.is_staff && <AddButton />}
         </div>
     )
 }

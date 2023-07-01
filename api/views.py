@@ -96,11 +96,10 @@ def getEmpregado(request, id):
 def updateEmpregado(request, id):
     data = request.data
     empregado = Empregado.objects.get(id=id)
-    serialized = EmpregadoSerializer(instance=empregado, data=data)
+    serialized = EmpregadoSerializer(empregado, data=data)
 
     if serialized.is_valid():
         serialized.save()
-    
     return Response(serialized.data)
 
 

@@ -16,7 +16,6 @@ const EmpregadoListPage = () => {
         getEmpresa()
         getEmpregados()
     }, [])
-    console.log(user)
 
     let getEmpregados = async () => {
         let response = await fetch(`${BASE_URL}/empregados/empresa/${empresaId}`)
@@ -43,7 +42,7 @@ const EmpregadoListPage = () => {
                     <ListEmpregados key={index} person={person} companyName={empresa} />
                 ))}
             </div>
-            {user.is_staff ? <AddButton empresaId={empresaId} /> : null}
+            {user?.is_staff ? <AddButton empresaId={empresaId} /> : null}
         </div>
     )
 }

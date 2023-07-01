@@ -29,7 +29,7 @@ const EmpregadoPage = () => {
             ...empregado,
             company: empregadoId,
         }
-        console.log(novoEmpregado)
+
         fetch(`${BASE_URL}/empregados/create`, {
             method: 'POST',
             headers: {
@@ -68,12 +68,12 @@ const EmpregadoPage = () => {
                 {task == 'create' ? (
                     <>
                         <h3>Inclua novo Empregado</h3>
-                        { user.is_staff && <button onClick={createNote}>Done</button>}
+                        { user?.is_staff && <button onClick={createNote}>Done</button>}
                     </>
                 ) : (
                     <>
                         <h3>Empregado: {empregado?.nome} </h3>
-                        { user.is_staff && <div className='buttons-delete-update'>
+                        { user?.is_staff && <div className='buttons-delete-update'>
                             <button onClick={deleteNote}>Delete</button>
                             <button onClick={updateNote}>Update</button>
                         </div>}
