@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import StepperTimeline from './TimeLine'
 
-
 let getTitle = (nome) => {
     if (nome.length > 12) {
         return nome.slice(0, 45)
@@ -16,7 +15,7 @@ const ListEmpregados = ({ person, companyName }) => {
     return (
         <div className='notes-list-item'>
             <Link to={`/empregados/edit/${id}`}>
-                <div className="empregado-details-timeline">
+                <div className='empregado-details-timeline'>
                     <h3>Empregado: {getTitle(nome)}</h3>
                     <StepperTimeline dates={dates} companyName={companyName} />
                 </div>

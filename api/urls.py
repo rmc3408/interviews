@@ -15,4 +15,6 @@ urlpatterns = [
     path('empregados/delete/<str:id>', views.deleteEmpregado, name='deleteEmpregado'),
     path('empregados/update/<str:id>', views.updateEmpregado, name='updateEmpregado'),
     path('empregados/<str:id>', views.getEmpregado, name='empregado'),
+
+    path('user/<str:id>', views.getUser, name='user'),
 ]

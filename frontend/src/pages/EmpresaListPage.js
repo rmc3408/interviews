@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import ListItemEmpresas from '../components/ListItemEmpresas'
+import React, { useState, useEffect, useContext } from 'react'
+import ListItemEmpresas from '../components/ListEmpresas'
 import { AddButton } from '../components/AddButton'
+import AuthContext from '../context/AuthContext'
 
 const BASE_URL = 'http://localhost:4000/api'
 
 const EmpresaListPage = () => {
+    let { user } = useContext(AuthContext)
     let [empresas, setEmpresas] = useState([])
 
     useEffect(() => {
@@ -29,7 +31,7 @@ const EmpresaListPage = () => {
                     <ListItemEmpresas key={index} empresa={empresa} />
                 ))}
             </div>
-            <AddButton />
+            {user.is_staff && <AddButton />}
         </div>
     )
 }

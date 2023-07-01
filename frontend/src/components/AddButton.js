@@ -13,7 +13,10 @@ export const AddButton = ({ empresaId }) => {
 }
 
 export const BackButton = () => {
-    const navigate = useNavigate();
-    return <h3><ArrowLeft onClick={() => navigate(-1)} className='floating-button-back' /></h3>
+    const navigate = useNavigate()
+    return (
+        <h3>
+            <ArrowLeft onClick={() => navigate(-1)} className='floating-button-back' />
+        </h3>
+    )
 }
-

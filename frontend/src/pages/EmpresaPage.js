@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { BackButton } from '../components/AddButton'
+import AuthContext from '../context/AuthContext'
+
 
 const BASE_URL = 'http://localhost:4000/api'
 
 const EmpresaPage = () => {
     let { id: empresaId } = useParams()
+    let { user } = useContext(AuthContext)
     const navigate = useNavigate()
     let [empresas, setEmpresas] = useState(null)
 
@@ -62,12 +65,12 @@ const EmpresaPage = () => {
             <div className='note-header'>
                 <BackButton />
                 {empresaId == 'new' ? (
-                    <button onClick={createNote} disabled={empresas?.nome == ''}> Done</button>
+                   user.is_staff && <button onClick={createNote}>Done </button>
                 ) : (
-                    <div className='buttons-delete-update'>
+                    user.is_staff && (<div className='buttons-delete-update'>
                         <button onClick={deleteNote}>Delete</button>
                         <button onClick={updateNote}>Update</button>
-                    </div>
+                    </div>)
                 )}
             </div>
             <textarea

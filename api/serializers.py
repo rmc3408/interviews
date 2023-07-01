@@ -1,5 +1,6 @@
 from .models import Empresa, Empregado
 from rest_framework.serializers import ModelSerializer
+from django.contrib.auth.models import User
 
 
 class EmpresaSerializer(ModelSerializer):
@@ -28,3 +29,7 @@ class EmpregadoSerializer(ModelSerializer):
         fields = '__all__'
 
 
+class UserSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'first_name', 'is_staff']

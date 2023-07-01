@@ -2,18 +2,27 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .tests import mockRoutes
 from .models import Empresa, Empregado
-from .serializers import EmpresaSerializer, EmpregadoSerializer, EmpregadoSemCompanySerializer, EmpresaNomeSerializer
+from .serializers import EmpresaSerializer, EmpregadoSerializer, EmpregadoSemCompanySerializer, EmpresaNomeSerializer, UserSerializer
 from datetime import date
 from rest_framework import status
+from django.contrib.auth.models import User
 
+@api_view(['GET'])
+def getRoutes(request):
+    return Response(mockRoutes)
+
+
+@api_view(['GET'])
+def getUser(request, id):
+    user = User.objects.get(id=id)
+    serialized = UserSerializer(user)
+    return Response(serialized.data)
 
 ############################
 # EMPRESA ENDPOINTS - CRUD
 ############################
 
-@api_view(['GET'])
-def getRoutes(request):
-    return Response(mockRoutes)
+
 
 
 @api_view(['GET'])
@@ -120,3 +129,5 @@ def createEmpregado(request):
         return Response(serialized.data, status=status.HTTP_201_CREATED)
     else:
         return Response(serialized.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+

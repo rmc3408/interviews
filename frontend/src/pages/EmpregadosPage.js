@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { BackButton } from '../components/AddButton'
 import EmpregadoForm from '../components/empregadoForm'
+import AuthContext from '../context/AuthContext'
 
 const BASE_URL = 'http://localhost:4000/api'
 
 const EmpregadoPage = () => {
     let { id: empregadoId, task } = useParams()
+    let { user } = useContext(AuthContext)
     const navigate = useNavigate()
     let [empregado, setEmpregado] = useState(null)
 
@@ -25,7 +27,7 @@ const EmpregadoPage = () => {
     let createNote = async () => {
         const novoEmpregado = {
             ...empregado,
-            company: empregadoId
+            company: empregadoId,
         }
         console.log(novoEmpregado)
         fetch(`${BASE_URL}/empregados/create`, {
@@ -64,22 +66,18 @@ const EmpregadoPage = () => {
             <div className='note-header'>
                 <BackButton />
                 {task == 'create' ? (
-                <>
-                    <h3>Inclua novo Empregado</h3>
-                    <button onClick={createNote} disabled={empregado?.nome == ''}> Done</button>
-                </>
+                    <>
+                        <h3>Inclua novo Empregado</h3>
+                        { user.is_staff && <button onClick={createNote}>Done</button>}
+                    </>
                 ) : (
-                <>
-                    <h3>Empregado: {empregado?.nome} </h3>
-                    <div className='buttons-delete-update'>
-                        <button 
-                        onClick={deleteNote}
-                        >Delete</button>
-                        <button 
-                        onClick={updateNote}
-                        >Update</button>
-                    </div>
-                </>
+                    <>
+                        <h3>Empregado: {empregado?.nome} </h3>
+                        { user.is_staff && <div className='buttons-delete-update'>
+                            <button onClick={deleteNote}>Delete</button>
+                            <button onClick={updateNote}>Update</button>
+                        </div>}
+                    </>
                 )}
             </div>
             <EmpregadoForm setEmpregado={setEmpregado} empregado={empregado} />
