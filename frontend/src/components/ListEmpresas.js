@@ -1,21 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-let getTime = (note) => {
-    return new Date(note.createdAt).toLocaleDateString('pt-BR')
+let getTime = (value) => {
+    return new Date(value.createdAt).toLocaleDateString('pt-BR')
 }
 
-let getTitle = (note) => {
-    if (note.nome.length > 12) {
-        return note.nome.slice(0, 45)
+let getTitle = (empresa) => {
+    if (empresa.nome.length > 12) {
+        return empresa.nome.slice(0, 45)
     }
-    return note.nome
+    return empresa.nome
 }
-
 
 const ListItemEmpresas = ({ empresa }) => {
     return (
-        <div className='notes-list-item'>
+        <div className='empresas-list-item'>
             <Link to={`/${empresa.id}`}>
                 <div>
                     <h3>{getTitle(empresa)}</h3>
@@ -24,7 +23,7 @@ const ListItemEmpresas = ({ empresa }) => {
                     </p>
                 </div>
             </Link>
-            <div className='notes-list-empregados'>
+            <div className='empresas-list-empregados'>
                 <Link to={`/empregados/empresa/${empresa.id}`}>Empregados</Link>
             </div>
         </div>

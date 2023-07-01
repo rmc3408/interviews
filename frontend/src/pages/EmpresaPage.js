@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { BackButton } from '../components/AddButton'
 import AuthContext from '../context/AuthContext'
 
-
 const BASE_URL = 'http://localhost:4000/api'
 
 const EmpresaPage = () => {
@@ -61,17 +60,17 @@ const EmpresaPage = () => {
     }
 
     return (
-        <div className='note'>
-            <div className='note-header'>
+        <div className='empresa'>
+            <div className='empresa-header'>
                 <BackButton />
-                {empresaId == 'new' ? (
-                   user?.is_staff && <button onClick={createNote}>Done </button>
-                ) : (
-                    user?.is_staff && (<div className='buttons-delete-update'>
-                        <button onClick={deleteNote}>Delete</button>
-                        <button onClick={updateNote}>Update</button>
-                    </div>)
-                )}
+                {empresaId == 'new'
+                    ? user?.is_staff && <button onClick={createNote}>Done </button>
+                    : user?.is_staff && (
+                          <div className='buttons-delete-update'>
+                              <button onClick={deleteNote}>Delete</button>
+                              <button onClick={updateNote}>Update</button>
+                          </div>
+                      )}
             </div>
             <textarea
                 onChange={(e) => {

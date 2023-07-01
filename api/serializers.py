@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class UserSerializer(ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'first_name', 'is_staff']
+        fields = ['id', 'first_name', 'is_staff' ]
 
 
 class EmpregadoSerializer(ModelSerializer):
@@ -21,7 +21,7 @@ class EmpresaSerializer(ModelSerializer):
     
     class Meta:
         model = Empresa
-        fields = ['id', 'nome', 'person_company']
+        fields = ['id', 'nome', 'createdAt', 'person_company']
 
     def create(self, validated_data):
         person_company = validated_data.pop('person_company')
@@ -47,5 +47,5 @@ class EmpregadoCompanyInfoSerializer(ModelSerializer):
 
     class Meta:
         model = Empregado
-        fields = ['id', 'nome', 'company', 'company_info']
+        fields = ['id', 'nome', 'saida', 'entrada', 'feriasEntrada', 'feriasSaida', 'company', 'company_info']
     

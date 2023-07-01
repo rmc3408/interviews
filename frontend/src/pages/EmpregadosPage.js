@@ -62,21 +62,23 @@ const EmpregadoPage = () => {
     }
 
     return (
-        <div className='note'>
-            <div className='note-header'>
+        <div className='empresa'>
+            <div className='empresa-header'>
                 <BackButton />
                 {task == 'create' ? (
                     <>
                         <h3>Inclua novo Empregado</h3>
-                        { user?.is_staff && <button onClick={createNote}>Done</button>}
+                        {user?.is_staff && <button onClick={createNote}>Done</button>}
                     </>
                 ) : (
                     <>
                         <h3>Empregado: {empregado?.nome} </h3>
-                        { user?.is_staff && <div className='buttons-delete-update'>
-                            <button onClick={deleteNote}>Delete</button>
-                            <button onClick={updateNote}>Update</button>
-                        </div>}
+                        {user?.is_staff && (
+                            <div className='buttons-delete-update'>
+                                <button onClick={deleteNote}>Delete</button>
+                                <button onClick={updateNote}>Update</button>
+                            </div>
+                        )}
                     </>
                 )}
             </div>

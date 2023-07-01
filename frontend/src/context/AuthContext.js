@@ -3,7 +3,6 @@ import jwt_decode from 'jwt-decode'
 
 const AuthContext = createContext()
 
-
 async function getTokenAccess(username, password) {
     let response = await fetch('http://127.0.0.1:4000/token/', {
         method: 'POST',
@@ -44,7 +43,6 @@ export const AuthProvider = ({ children }) => {
     }
 
     let logoutUser = () => {
-        
         localStorage.removeItem('authTokens')
         localStorage.removeItem('user')
         setAuthTokens(null)
@@ -74,12 +72,11 @@ export const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-       const localStorageToken = JSON.parse(localStorage.getItem('authTokens')) ?? null
-       const localStorageUser = JSON.parse(localStorage.getItem('user')) ?? null
-       setAuthTokens(localStorageToken)
-       setUser(localStorageUser)
+        const localStorageToken = JSON.parse(localStorage.getItem('authTokens')) ?? null
+        const localStorageUser = JSON.parse(localStorage.getItem('user')) ?? null
+        setAuthTokens(localStorageToken)
+        setUser(localStorageUser)
     }, [])
-    
 
     return <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>
 }

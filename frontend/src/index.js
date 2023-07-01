@@ -5,4 +5,8 @@ import { AuthProvider } from './context/AuthContext'
 
 const container = document.getElementById('root')
 const root = createRoot(container)
-root.render(<AuthProvider><App /></AuthProvider>)
+root.render(
+    <AuthProvider>
+        <App />
+    </AuthProvider>,
+)

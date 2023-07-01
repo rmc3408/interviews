@@ -13,7 +13,7 @@ const ListEmpregados = ({ person, companyName }) => {
     const { id, nome, ...dates } = person
 
     return (
-        <div className='notes-list-item'>
+        <div className='empresas-list-item'>
             <Link to={`/empregados/edit/${id}`}>
                 <div className='empregado-details-timeline'>
                     <h3>Empregado: {getTitle(nome)}</h3>

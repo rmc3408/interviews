@@ -1,11 +1,15 @@
 import React, { useContext, useEffect } from 'react'
 import AuthContext from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
+import { Button, Label } from 'flowbite-react';
 
-const inputDate_TailwindCSS_class ='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white dark:focus:border-white focus:outline-none focus:ring-0 focus:border-white peer'
-const labelDate_TailwindCSS_class ='absolute text-sm text-gray-500 dark:text-gray-400 transform -translate-y-6 scale-x-180 top-2 -z-10 origin-[0] focus:font-large'
 
+const inputStyleClass =
+'block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2' +
+' appearance-none dark:text-white dark:focus:border-white focus:outline-none focus:ring-0 focus:border-white peer'
 const LoginPage = () => {
+
+
     let navigate = useNavigate()
     let { loginUser, user } = useContext(AuthContext)
 
@@ -14,21 +18,17 @@ const LoginPage = () => {
     }, [user])
 
     return (
-        <div>
-            <form onSubmit={loginUser}>
-                <div className='relative mb-6 mt-8 group'>
-                    <input type='text' name='username' className={inputDate_TailwindCSS_class} />
-                    <label htmlFor='username' className={labelDate_TailwindCSS_class}>
-                        UserName
-                    </label>
+        <div className='h-full'>
+            <form onSubmit={loginUser} className='flex mt-16 mx-24 max-w-full flex-col justify-center items-center '>
+                <div className='relative w-full mb-4 mt-8 group'>
+                    <Label htmlFor='username' value='Username' />
+                    <input type='text' name='username' id="username" className={inputStyleClass} />
                 </div>
-                <div className='relative mb-6 mt-8 group'>
-                    <input type='password' name='password' className={inputDate_TailwindCSS_class} />
-                    <label htmlFor='password' className={labelDate_TailwindCSS_class}>
-                        Password
-                    </label>
+                <div className='relative w-full mb-16 mt-2 group'>
+                    <Label htmlFor='password' value='Password' />
+                    <input type='password' name='password' id="password" className={inputStyleClass} />
                 </div>
-                <input type='submit' />
+                <Button type="submit" className='login-button'>Submit</Button>
             </form>
         </div>
     )

@@ -30,14 +30,14 @@ const EmpregadoListPage = () => {
     }
 
     return (
-        <div className='notes'>
-            <div className='notes-header'>
+        <div className='empresas'>
+            <div className='empresas-header'>
                 <BackButton />
-                <h2 className='notes-title'> Empregados da {empresa}</h2>
-                <p className='notes-count'>{empregados.length}</p>
+                <h2 className='empresas-title'> Empregados da {empresa}</h2>
+                <p className='empresas-count'>{empregados.length}</p>
             </div>
 
-            <div className='notes-list'>
+            <div className='empresas-list'>
                 {empregados.map((person, index) => (
                     <ListEmpregados key={index} person={person} companyName={empresa} />
                 ))}

@@ -10,8 +10,6 @@ import EmpregadoPage from './pages/EmpregadosPage'
 import AuthContext from './context/AuthContext'
 import LoginPage from './pages/LoginPage'
 
-
-
 function App() {
     let { user } = useContext(AuthContext)
 
@@ -20,7 +18,7 @@ function App() {
             path: '/',
             element: <EmpresaListPage />,
             errorElement: <ErrorPage />,
-            loader: () => !user ? redirect("/login") : null,
+            loader: () => (!user ? redirect('/login') : null),
         },
         {
             path: '/empregados/empresa/:id',
@@ -39,13 +37,14 @@ function App() {
             element: <LoginPage />,
         },
         {
-            path:"*",
-            element: <Navigate to="/" replace />
-        }
+            path: '*',
+            element: <Navigate to='/' replace />,
+        },
     ])
 
     return (
         <>
+
             <div className='container dark'>
                 <div className='app'>
                     <Header />
