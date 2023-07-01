@@ -2,15 +2,14 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .tests import mockRoutes
 from .models import Empresa, Empregado
-from .serializers import EmpresaSerializer, EmpregadoSerializer, EmpregadoSemCompanySerializer, EmpresaNomeSerializer, UserSerializer
-from datetime import date
-from rest_framework import status
+from .serializers import EmpresaSerializer, EmpregadoSerializer, EmpregadoCompanyInfoSerializer, EmpresaNomeSerializer, UserSerializer
+from rest_framework import status, viewsets
 from django.contrib.auth.models import User
 
-@api_view(['GET'])
-def getRoutes(request):
-    return Response(mockRoutes)
 
+############################
+#   USER ENDPOINTS - GET
+############################
 
 @api_view(['GET'])
 def getUser(request, id):
@@ -18,12 +17,10 @@ def getUser(request, id):
     serialized = UserSerializer(user)
     return Response(serialized.data)
 
+
 ############################
 # EMPRESA ENDPOINTS - CRUD
 ############################
-
-
-
 
 @api_view(['GET'])
 def getEmpresas(request):
@@ -51,20 +48,20 @@ def createEmpresa(request):
 def deleteEmpresa(request, id):
     empresa = Empresa.objects.get(id=id)
     empresa.delete()
-    return Response('Company deleted with {{id}}')
+    return Response(f'Company deleted with id = {id}', status=status.HTTP_205_RESET_CONTENT)
 
 
 @api_view(['PUT'])
 def updateEmpresa(request, id):
     data = request.data
     empresa = Empresa.objects.get(id=id)
-    serialized = EmpresaSerializer(instance=empresa, data=data)
+    print(empresa)
+    serialized = EmpresaNomeSerializer(instance=empresa, data=data, many=False)
 
     if serialized.is_valid():
         serialized.save()
     
     return Response(serialized.data)
-
 
 
 ############################
@@ -88,7 +85,7 @@ def getEmpregadosByEmpresa(request, id):
 @api_view(['GET'])
 def getEmpregado(request, id):
     empregado = Empregado.objects.get(id=id)
-    serializer = EmpregadoSerializer(empregado, many=False)
+    serializer = EmpregadoCompanyInfoSerializer(empregado, many=False)
     return Response(serializer.data)
 
 
@@ -107,21 +104,12 @@ def updateEmpregado(request, id):
 def deleteEmpregado(request, id):
     empregado = Empregado.objects.get(id=id)
     empregado.delete()
-    return Response('Company deleted with {{id}}')
+    return Response(f'Company deleted with id = {id}', status=status.HTTP_205_RESET_CONTENT)
 
 
 @api_view(['POST'])
 def createEmpregado(request):
-    companyFound = Empresa.objects.get(id=request.data['company'])
-    novaEmpresa = Empregado.objects.create(
-        nome=request.data['nome'],
-        company=companyFound,
-        saida=request.data['saida'],
-        entrada=request.data['entrada'],
-        feriasEntrada=request.data['feriasEntrada'],
-        feriasSaida=request.data['feriasSaida'],
-    )
-    serialized = EmpregadoSemCompanySerializer(instance=novaEmpresa, data=request.data, many=False)
+    serialized = EmpregadoSerializer(data=request.data, many=False)
 
     if (serialized.is_valid()):
         serialized.save()
@@ -129,4 +117,3 @@ def createEmpregado(request):
     else:
         return Response(serialized.errors, status=status.HTTP_400_BAD_REQUEST)
     
-
