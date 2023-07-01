@@ -237,15 +237,14 @@ a {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
 input:-webkit-autofill:active,
 #username,
 #password {
-    -webkit-color:#f5f6f7 !important;
+    -webkit-color: #f5f6f7 !important;
     -webkit-box-shadow: 0 0 0px 1000px #2e3235 inset;
 }
-
 
 .floating-button-back {
     border: none;
@@ -333,13 +332,12 @@ input[type='date']::-webkit-calendar-picker-indicator {
     filter: invert(0.8);
 }
 
-
 .buttons-delete-update > button:first-child {
     margin-right: 12px;
 }
 
 @media only screen and (max-width: 640px) {
-    .empregado-details-timeline > ol > li  {
+    .empregado-details-timeline > ol > li {
         border-left: 1px solid white;
         margin-bottom: 0.2rem;
         padding-left: 12px;
