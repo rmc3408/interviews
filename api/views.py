@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 
 ############################
-#   USER ENDPOINTS - GET
+#   USER VIEWS ACCESS ENDPOINTS - GET
 ############################
 
 @api_view(['GET'])
@@ -18,7 +18,7 @@ def getUser(request, id):
 
 
 ############################
-# EMPRESA ENDPOINTS - CRUD
+# EMPRESA VIEWS ACCESS ENDPOINTS - CRUD
 ############################
 
 @api_view(['GET'])
@@ -64,7 +64,7 @@ def updateEmpresa(request, id):
 
 
 ############################
-# EMPREGADO ENDPOINTS - CRUD
+# EMPREGADO VIEWS ACCESS ENDPOINTS - CRUD
 ############################
 
 @api_view(['GET'])

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'api.apps.ApiConfig',
     'rest_framework',
     "corsheaders",
@@ -58,16 +59,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'backend.urls'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",
+# ]
 
 CORS_ORIGIN_ALLOW_ALL=True
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #'DIRS': [ BASE_DIR/'frontend/build' ],
+        #'DIRS': [ BASE_DIR/'frontend/build' ], # FrontEnd app will use same server
         'DIRS': [ ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -132,6 +133,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+############# FrontEnd app will use same server
 # STATICFILES_DIRS = [ BASE_DIR/'frontend/build/static' ]
 
 # Default primary key field type
@@ -139,6 +141,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+
+# JWT AUTHENTICATION
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',

@@ -2,13 +2,14 @@ from .models import Empresa, Empregado
 from rest_framework.serializers import ModelSerializer, HyperlinkedModelSerializer
 from django.contrib.auth.models import User
 
-
+##### User
 class UserSerializer(ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'first_name', 'is_staff' ]
 
 
+###### Empregado - All fields
 class EmpregadoSerializer(ModelSerializer):
     
     class Meta:
@@ -16,6 +17,7 @@ class EmpregadoSerializer(ModelSerializer):
         fields = '__all__'
 
 
+###### Empresa with Empregados' all fields
 class EmpresaSerializer(ModelSerializer):
     person_company = EmpregadoSerializer(many=True)
     
@@ -36,12 +38,14 @@ class EmpresaSerializer(ModelSerializer):
         return empresa_instance
 
 
+### Empresa's Name only
 class EmpresaNomeSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Empresa
         fields = ['id', 'nome']
 
 
+### Empregado with Empresa's all Fields
 class EmpregadoCompanyInfoSerializer(ModelSerializer):
     company_info = EmpresaNomeSerializer(source="company", read_only=True)
 
