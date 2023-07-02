@@ -1,10 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react'
 import jwt_decode from 'jwt-decode'
+import { BASE_URL, AUTH_URL } from '../utils/constants'
 
 const AuthContext = createContext()
 
 async function getTokenAccess(username, password) {
-    let response = await fetch('http://127.0.0.1:4000/token/', {
+    let response = await fetch(AUTH_URL + '/token/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -15,7 +16,7 @@ async function getTokenAccess(username, password) {
 }
 
 async function getUserInfo(id) {
-    let response = await fetch('http://127.0.0.1:4000/api/user/' + id, {
+    let response = await fetch(BASE_URL + '/user/' + id, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -25,14 +26,14 @@ async function getUserInfo(id) {
 }
 
 export const AuthProvider = ({ children }) => {
-    let [authTokens, setAuthTokens] = useState(null)
-    let [user, setUser] = useState(null)
+    let [ authTokens, setAuthTokens] = useState(null)
+    let [ user, setUser] = useState(null)
+    let [ toast, setToast] = useState(null)
 
     let loginUser = async (e) => {
         e.preventDefault()
 
         const tokenAccess = await getTokenAccess(e.target.username.value, e.target.password.value)
-
         setAuthTokens(tokenAccess)
         localStorage.setItem('authTokens', JSON.stringify(tokenAccess))
 
@@ -50,7 +51,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     let updateToken = async () => {
-        let response = await fetch('http://127.0.0.1:4000/token/refresh/', {
+        let response = await fetch(AUTH_URL + '/token/refresh/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -65,10 +66,14 @@ export const AuthProvider = ({ children }) => {
 
     let contextData = {
         user: user,
+        
         authTokens: authTokens,
         loginUser: loginUser,
         logoutUser: logoutUser,
         updateToken: updateToken,
+        
+        toast: toast,
+        setToast: setToast
     }
 
     useEffect(() => {

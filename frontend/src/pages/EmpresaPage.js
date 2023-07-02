@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { BackButton } from '../components/AddButton'
 import AuthContext from '../context/AuthContext'
+import { BASE_URL } from '../utils/constants'
 
-const BASE_URL = 'http://localhost:4000/api'
 
 const EmpresaPage = () => {
     let { id: empresaId } = useParams()

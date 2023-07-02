@@ -3,8 +3,8 @@ import ListEmpregados from '../components/ListEmpregados'
 import { AddButton, BackButton } from '../components/AddButton'
 import { useParams } from 'react-router-dom'
 import AuthContext from '../context/AuthContext'
+import { BASE_URL } from '../utils/constants'
 
-const BASE_URL = 'http://localhost:4000/api'
 
 const EmpregadoListPage = () => {
     let { user } = useContext(AuthContext)

@@ -3,8 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { BackButton } from '../components/AddButton'
 import EmpregadoForm from '../components/empregadoForm'
 import AuthContext from '../context/AuthContext'
+import { BASE_URL } from '../utils/constants'
 
-const BASE_URL = 'http://localhost:4000/api'
 
 const EmpregadoPage = () => {
     let { id: empregadoId, task } = useParams()

@@ -1,11 +1,6 @@
 import React from 'react'
+import { inputStyleClass, labelStyleClass } from '../utils/constants'
 
-const inputDate_TailwindCSS_class =
-    'block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2' +
-    ' appearance-none dark:text-white dark:focus:border-white focus:outline-none focus:ring-0 focus:border-white peer'
-const labelDate_TailwindCSS_class =
-    'absolute text-sm text-gray-500 dark:text-gray-400 transform' +
-    ' -translate-y-6 scale-x-180 top-2 -z-10 origin-[0] focus:font-large'
 
 const EmpregadoForm = ({ setEmpregado, empregado }) => {
     let handleChange = (e) => {
@@ -24,7 +19,7 @@ const EmpregadoForm = ({ setEmpregado, empregado }) => {
                         name='nome'
                         value={empregado?.nome || ''}
                         onChange={handleChange}
-                        className={inputDate_TailwindCSS_class}
+                        className={inputStyleClass}
                     />
                 </div>
                 <h4>Contrato</h4>
@@ -34,9 +29,9 @@ const EmpregadoForm = ({ setEmpregado, empregado }) => {
                         name='entrada'
                         defaultValue={empregado?.entrada}
                         onChange={handleChange}
-                        className={inputDate_TailwindCSS_class}
+                        className={inputStyleClass}
                     />
-                    <label htmlFor='entrada' className={labelDate_TailwindCSS_class}>
+                    <label htmlFor='entrada' className={labelStyleClass}>
                         Inicio do contrato
                     </label>
                 </div>
@@ -46,9 +41,9 @@ const EmpregadoForm = ({ setEmpregado, empregado }) => {
                         name='saida'
                         defaultValue={empregado?.saida}
                         onChange={handleChange}
-                        className={inputDate_TailwindCSS_class}
+                        className={inputStyleClass}
                     />
-                    <label htmlFor='saida' className={labelDate_TailwindCSS_class}>
+                    <label htmlFor='saida' className={labelStyleClass}>
                         Final do Contrato
                     </label>
                 </div>
@@ -59,9 +54,9 @@ const EmpregadoForm = ({ setEmpregado, empregado }) => {
                         name='feriasEntrada'
                         defaultValue={empregado?.feriasEntrada}
                         onChange={handleChange}
-                        className={inputDate_TailwindCSS_class}
+                        className={inputStyleClass}
                     />
-                    <label htmlFor='feriasEntrada' className={labelDate_TailwindCSS_class}>
+                    <label htmlFor='feriasEntrada' className={labelStyleClass}>
                         Inicio das Ferias
                     </label>
                 </div>
@@ -71,9 +66,9 @@ const EmpregadoForm = ({ setEmpregado, empregado }) => {
                         name='feriasSaida'
                         defaultValue={empregado?.feriasSaida}
                         onChange={handleChange}
-                        className={inputDate_TailwindCSS_class}
+                        className={inputStyleClass}
                     />
-                    <label htmlFor='feriasSaida' className={labelDate_TailwindCSS_class}>
+                    <label htmlFor='feriasSaida' className={labelStyleClass}>
                         Final das Ferias
                     </label>
                 </div>

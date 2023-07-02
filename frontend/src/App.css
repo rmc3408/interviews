@@ -343,3 +343,10 @@ input[type='date']::-webkit-calendar-picker-indicator {
         padding-left: 12px;
     }
 }
+
+[data-testid="flowbite-toast"] {
+    position: absolute;
+    top: 30px;
+    width: 20%;
+    z-index: 2;
+}

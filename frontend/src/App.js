@@ -9,9 +9,10 @@ import EmpregadoListPage from './pages/EmpregadoListPage'
 import EmpregadoPage from './pages/EmpregadosPage'
 import AuthContext from './context/AuthContext'
 import LoginPage from './pages/LoginPage'
+import GenericToast from './components/toast'
 
 function App() {
-    let { user } = useContext(AuthContext)
+    let { user, toast } = useContext(AuthContext)
 
     const router = createBrowserRouter([
         {
@@ -45,6 +46,7 @@ function App() {
     return (
         <>
             <div className='container dark'>
+                {toast == 'error' && <GenericToast />}
                 <div className='app'>
                     <Header />
                     <RouterProvider router={router} />
