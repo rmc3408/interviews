@@ -1,16 +1,50 @@
-# Django
+# Bix Full Stack Challenge
 
-### Traversy Crash course - 7 hours length - GOOD
-I stopped at 2h 47min
-https://github.com/bradtraversy/djangocrashcourse
-https://github.com/divanov11/StudyBud
+## FrontEnd
+Technology used React 18
+
+In the project directory, you can run:
+
+1.\
+``` cd frontend ```
+
+2.\
+```npm install``` to install all dependencies
+
+3.\
+```npm run start``` to open [http://localhost:3000](http://localhost:3000)
+
+### extras
+`npm run build` to the `build` folder.\
+`npm run format` to the lint and organize your code.\
+`npm run lint:fix` to the lint and fix warnings your code.
 
 
-### VeryAcademy Django REST framework and React Crash course - 5 hours length - HORRIBLE
-I stopped at 1h 03min -
-https://github.com/bradtraversy/djangocrashcourse
-https://github.com/divanov11/StudyBud
+## BackEnd
+Technology used Django 4.2
+
+In the project directory, you can run:
+
+First, Run inside environment VENV
+
+1.\
+```pip install -r requirements.txt```
 
 
-# Dennis Ivy - Django Rest Framework + React Note App - 3hour ansd 24 minutes
-https://github.com/divanov11/Django-React-NotesApp
+2.\
+```py manage.py makemigrations```
+
+
+3.\
+```py manage.py migrate```
+
+4.\
+- Create Admin user\
+```py manage.py createsuperuser```
+
+- Create another user without admin privilleges\
+[Django admin system](http://localhost:4000/admin)\
+-- ensure is_staff or membro da equipe must be **UNCHECKED**
+
+5.\
+Run Server ```py manage.py runserver```
