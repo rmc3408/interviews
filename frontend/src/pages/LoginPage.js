@@ -31,7 +31,7 @@ const LoginPage = () => {
     }
 
     return (
-        <div className='h-full'>
+        <div >
             <form onSubmit={validateLogin} className='flex mt-16 mx-24 max-w-full flex-col justify-center items-center '>
                 <div className='relative w-full mb-4 mt-8 group'>
                     <Label htmlFor='username' value='Username' />

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'rest_framework',
     "corsheaders",
+    'drf_yasg',
     'rest_framework_simplejwt',
 ]
 

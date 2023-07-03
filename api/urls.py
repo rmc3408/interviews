@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 
@@ -20,4 +20,5 @@ urlpatterns = [
 
     ## USER ENDPOINTS
     path('user/<str:id>', views.getUser, name='user'),
+    path('swagger/', views.schema_view.with_ui('swagger', cache_timeout=0), name='swagger'),
 ]

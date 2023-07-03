@@ -1,7 +1,8 @@
 import React from 'react'
 import { Timeline } from 'flowbite-react'
 
-export default function StepperTimeline({ dates, companyName }) {
+
+function StepperTimeline({ dates, companyName }) {
     return (
         <Timeline horizontal>
             <Timeline.Item>
@@ -31,3 +32,5 @@ export default function StepperTimeline({ dates, companyName }) {
         </Timeline>
     )
 }
+
+export default StepperTimeline

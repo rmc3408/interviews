@@ -1,9 +1,25 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Empresa, Empregado
+from rest_framework import permissions
 from .serializers import EmpresaSerializer, EmpregadoSerializer, EmpregadoCompanyInfoSerializer, EmpresaNomeSerializer, UserSerializer
 from rest_framework import status
 from django.contrib.auth.models import User
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Cadastro API",
+      default_version='v1',
+      description="Empresas, Empregados, Token Authentication",
+      contact=openapi.Contact(email="molinaro.raphael@gmail.com"),
+      license=openapi.License(name="MIT License"),
+   ),
+   public=True,
+   permission_classes=(permissions.AllowAny,),
+)
 
 
 ############################

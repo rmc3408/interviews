@@ -4,6 +4,7 @@ import { BASE_URL, AUTH_URL } from '../utils/constants'
 
 const AuthContext = createContext()
 
+
 async function getTokenAccess(username, password) {
     let response = await fetch(AUTH_URL + '/token/', {
         method: 'POST',

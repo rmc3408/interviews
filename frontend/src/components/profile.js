@@ -3,7 +3,8 @@ import { Avatar } from 'flowbite-react'
 import adminPicture from '../assets/images/admin-profile.png'
 import userPicture from '../assets/images/user-profile.png'
 
-export default function AvatarText({ nome, isAdmin }) {
+
+function AvatarText({ nome, isAdmin }) {
     return (
         <Avatar img={isAdmin ? adminPicture : userPicture} rounded alt='control_user'>
             <div className='space-y-0 font-medium dark:text-white'>
@@ -13,3 +14,5 @@ export default function AvatarText({ nome, isAdmin }) {
         </Avatar>
     )
 }
+
+export default AvatarText
