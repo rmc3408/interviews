@@ -1,0 +1,11 @@
+/.tscache
+/.vscode
+/node_modules
+.baseDir.ts
+.DS_Store
+.env
+dist
+npm-debug.log
+.nyc_output
+coverage
+tmp
