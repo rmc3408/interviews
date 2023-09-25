@@ -1,0 +1,298 @@
+[
+  {
+    "name": "Rachel Miller",
+    "industry": "legalFinancial",
+    "industryActivities": [
+      "BookkeepingServices",
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Michael Anderson",
+    "industry": "restaurants",
+    "industryActivities": [
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "John Green",
+    "industry": "contracting",
+    "industryActivities": [
+      "BookkeepingServices"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Rachel Smith",
+    "industry": "restaurants",
+    "industryActivities": [
+      "TaxReturnPreparation",
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Rachel Anderson",
+    "industry": "contracting",
+    "industryActivities": [
+      "BookkeepingServices"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Michael Miller",
+    "industry": "restaurants",
+    "industryActivities": [
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Amanda Green",
+    "industry": "restaurants",
+    "industryActivities": [
+      "TaxReturnPreparation",
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Amanda Doe",
+    "industry": "contracting",
+    "industryActivities": [
+      "TaxReturnPreparation",
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Amanda Miller",
+    "industry": "technology",
+    "industryActivities": [
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Steve Doe",
+    "industry": "contracting",
+    "industryActivities": [
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Rachel Green",
+    "industry": "contracting",
+    "industryActivities": [
+      "BookkeepingServices",
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Rachel Doe",
+    "industry": "legalFinancial",
+    "industryActivities": [
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "John Davis",
+    "industry": "technology",
+    "industryActivities": [
+      "TaxReturnPreparation",
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Steve Miller",
+    "industry": "technology",
+    "industryActivities": [
+      "BookkeepingServices"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "John Anderson",
+    "industry": "legalFinancial",
+    "industryActivities": [],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Steve Anderson",
+    "industry": "technology",
+    "industryActivities": [
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Michael Smith",
+    "industry": "legalFinancial",
+    "industryActivities": [
+      "BookkeepingServices",
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Michael Davis",
+    "industry": "technology",
+    "industryActivities": [],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Michael Doe",
+    "industry": "technology",
+    "industryActivities": [
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Steve Green",
+    "industry": "contracting",
+    "industryActivities": [
+      "BookkeepingServices",
+      "TaxReturnPreparation",
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "John Smith",
+    "industry": "contracting",
+    "industryActivities": [],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Steve Smith",
+    "industry": "restaurants",
+    "industryActivities": [
+      "BookkeepingServices",
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Jane Davis",
+    "industry": "technology",
+    "industryActivities": [
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "John Doe",
+    "industry": "legalFinancial",
+    "industryActivities": [
+      "BookkeepingServices",
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Jane Miller",
+    "industry": "restaurants",
+    "industryActivities": [
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Amanda Smith",
+    "industry": "contracting",
+    "industryActivities": [
+      "BookkeepingServices",
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "Jane Green",
+    "industry": "contracting",
+    "industryActivities": [
+      "TaxReturnPreparation",
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Rachel Davis",
+    "industry": "legalFinancial",
+    "industryActivities": [
+      "BookkeepingServices",
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Amanda Anderson",
+    "industry": "contracting",
+    "industryActivities": [
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Jane Smith",
+    "industry": "legalFinancial",
+    "industryActivities": [
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Amanda Davis",
+    "industry": "restaurants",
+    "industryActivities": [
+      "BookkeepingServices",
+      "TaxReturnPreparation"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Jane Doe",
+    "industry": "technology",
+    "industryActivities": [
+      "TaxReturnPreparation",
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "no"
+  },
+  {
+    "name": "John Miller",
+    "industry": "restaurants",
+    "industryActivities": [],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Jane Anderson",
+    "industry": "technology",
+    "industryActivities": [],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Michael Green",
+    "industry": "contracting",
+    "industryActivities": [
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "yes"
+  },
+  {
+    "name": "Steve Davis",
+    "industry": "contracting",
+    "industryActivities": [
+      "BookkeepingServices",
+      "TaxReturnPreparation",
+      "ReviewEngagements"
+    ],
+    "worksOutsideOfCanada": "no"
+  }
+]

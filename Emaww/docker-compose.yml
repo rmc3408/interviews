@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  redis-db:
+    container_name: redis
+    image: redis:6.2-alpine
+    ports:
+      - 6379:6379
+  app:
+    container_name: app
+    build: .
+    command: node index.js
+    links:
+      - redis-db
+    depends_on:
+      - redis-db

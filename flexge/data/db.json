@@ -1,0 +1,44 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Customer_1",
+      "age": 39,
+      "gender": true,
+      "username": "customer1@gmail.com",
+      "password": "0000"
+    },
+    {
+      "id": 2,
+      "name": "Customer_2",
+      "age": 22,
+      "gender": false,
+      "username": "customer2@gmail.com",
+      "password": "0001"
+    },
+    {
+      "id": 3,
+      "name": "Customer_3",
+      "age": 17,
+      "gender": false,
+      "username": "customer3@gmail.com",
+      "password": "0003"
+    },
+    {
+      "name": "Customer_4",
+      "age": "30",
+      "gender": true,
+      "id": 4,
+      "username": "rmc3408",
+      "password": "0004"
+    },
+    {
+      "name": "Customer_5",
+      "age": "25",
+      "gender": true,
+      "username": "Certemente",
+      "password": "0005",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+
+.LoadingBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.filteredOUT {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2%;
+  margin-left: 10%;
+  width: 80%;
+}
+.filteredOUT > div:first-child {
+  color: rgb(113, 114, 116);
+  font-size: 1.4vw;
+}
+
+.filteredOUT > div:nth-child(2) {
+  color: rgb(174, 175, 177); 
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40vw;
+}
+
+.filteredOUT > div:nth-child(2) > label {
+  width: 20%;
+  font-size: 1vw;
+}
+.filteredOUT > div:nth-child(2) > div {
+  width: 80%;
+}
+
+.spinnerBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  background-color: rgb(209, 9, 9);
+  
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}

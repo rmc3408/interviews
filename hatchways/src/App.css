@@ -1,0 +1,90 @@
+@import "~antd/dist/antd.css";
+
+.Full-App {
+  font-family: "Raleway", sans-serif;
+  background: #dadada;
+  height: 100vh;
+}
+
+.BoardBox {
+  position: fixed;
+  margin: 5vh 20%;
+  height: 90vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.BoardBox::-webkit-scrollbar {
+  display: none;
+}
+
+.Center-BoardBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatarStyle {
+  border: 1px solid lightgray;
+}
+
+.CardText-StudentCard {
+  padding-left: 1.2vw;
+}
+.CardText-StudentCard > p {
+  color: #bdbdbd;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0;
+}
+
+.input-Name-BoardBox {
+  outline: 0;
+  font-size: 1.4rem;
+  border: 0;
+  width: 100%;
+  padding: 12px;
+  border-bottom: 2px solid rgba(88,78,0,0.2);
+}
+
+.input-Name-BoardBox::placeholder{
+  padding-right: 16px;
+  color: rgba(25,88,0,0.15);
+}
+
+.input-Name-BoardBox:focus {
+  transition: .8s;
+  border-bottom: 2px solid rgba(56, 56, 56, 0.842); 
+
+}
+
+.plusButton-StudentCard {
+  position: absolute;
+  right: 2%;
+  top: 1%;
+  font-size: 4rem;
+  line-height: 2.5rem;
+  color: grey;
+  border: none;
+  background: none;
+}
+
+.table-GradesPanel {
+  border: none;
+  color: #bdbdbd;
+}
+.table-GradesPanel > tr > td {
+  padding-right: 32px;
+}
+
+.input-Tag-StudentCard {
+  outline: 0;
+  display: block;
+  font-size: 1rem;
+  border: 0;
+  width: auto;
+  border-bottom: 2px solid rgba(88,78,0,0.2);
+}

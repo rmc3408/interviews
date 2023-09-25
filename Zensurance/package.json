@@ -1,0 +1,9 @@
+{
+  "name": "insurance-product-engineer",
+  "version": "1.0.0",
+  "author": "Zensurance",
+  "scripts": {},
+  "dependencies": {
+    "mingo": "^2.4.0"
+  }
+}
