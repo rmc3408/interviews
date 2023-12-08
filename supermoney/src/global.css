@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Proxima';
+  src: url(/src/lib/proximanova_regular.ttf);
+}
+
+@font-face {
+  font-family: 'Proxima';
+  src: url(/src/lib/proximanova_bold.otf);
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Proxima';
+}
