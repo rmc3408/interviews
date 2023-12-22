@@ -1,0 +1,32 @@
+@import '../../styling/variables';
+
+
+.input-container {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 44px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  div > .input-button {
+    margin-left: 16px;
+    padding: 4px 16px;
+    background-color: $primary-light;
+    color: $secondary-dark;
+  }
+
+  @media screen and (max-width: 572px) {
+    div > .input-button {
+      margin-top: 16px;
+      margin-left: 0;
+    }
+    div > .input-button:first-child {
+      margin-right: 24px
+    }
+  }
+}
+
+.input-search {
+  min-width: 300px;
+  width: 40%;
+}

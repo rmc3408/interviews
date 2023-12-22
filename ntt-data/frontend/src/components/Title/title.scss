@@ -1,0 +1,17 @@
+@import '../../styling/variables';
+
+ui5-title {
+  color: $primary-dark;
+}
+
+.header {
+  margin: 44px;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 572px) {
+  .header {
+    margin: 20px 12px;
+    margin-top: 30px;
+  }
+}

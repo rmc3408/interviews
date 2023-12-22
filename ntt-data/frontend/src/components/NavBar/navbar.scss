@@ -1,0 +1,15 @@
+@import '../../styling/variables';
+
+.navbar {
+  height: 10vh;
+  background-color: $primary-light;
+  box-shadow: none;
+  color: $secondary-light;
+  font-size: x-large;
+
+  ui5-icon {
+    transform: scale(1.8);
+    margin-left: 20px;
+    color: $secondary-light;
+  }
+}

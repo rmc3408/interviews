@@ -1,0 +1,29 @@
+@import '../styling/variables';
+
+body {
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: $secondary-light;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page {
+  height: auto;
+}
+
+.main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+p, h1, h2, h3, h4 {
+  color: $primary-light;
+}
+
+h1, .ui5-title-root {
+  color: $primary-dark;
+}
