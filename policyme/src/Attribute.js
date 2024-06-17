@@ -9,9 +9,9 @@ function modifierTwoPoints(value) {
 }
 
 /**
- * This is the Attribute component including modifier feature (TODO: move to new component)
+ * This is the Attribute component including modifier feature
  */
-function Attribute({ exportAttributes }) {
+function Attribute({ exportAttributes, exportModifier }) {
   const [attribute, setAttribute] = useState(Array.from({ length: ATTRIBUTE_LIST.length}).fill(10));
   const [modifier, setModifier] = useState(Array.from({ length: ATTRIBUTE_LIST.length }).fill(0));
 
@@ -32,6 +32,7 @@ function Attribute({ exportAttributes }) {
     setModifier(newModifierList)
     setAttribute(newAttributeList)
     exportAttributes(newAttributeList)
+    exportModifier(newModifierList)
   }
 
   return <div>

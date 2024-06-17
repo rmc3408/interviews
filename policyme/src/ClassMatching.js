@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CLASS_LIST } from './consts.js';
+import CharacterCard from './CharacterCard.js';
 
 const classCharacter = Object.keys(CLASS_LIST)
 
@@ -9,6 +10,7 @@ const classCharacter = Object.keys(CLASS_LIST)
  */ 
 function ClassMatching({ userAttribute }) {
   const [players, setPlayer] = useState(Array.from({length: classCharacter.length}).fill(false))
+  const [characterEnable, setCharacterEnable] = useState('')
   
   // Function check each attribute of CLASSLIST matches with current player attribute 
   // TODO: Function is BigO(n^2) -> Refactor to speed when have time
@@ -31,12 +33,10 @@ function ClassMatching({ userAttribute }) {
   }
 
   // TASK 3 - Once click on the player character, open an alert with unformatted attributes Object
-  const displayClassInfo = (idx) => {
-    const card = CLASS_LIST[classCharacter[idx]]
-    alert(JSON.stringify(card, undefined, 2))
+  const displayCharacterInfo = (idx) => {
+    setCharacterEnable(classCharacter[idx])
   }
 
-  // Every Change on userAttribute, Call verify Player and re-render
   useEffect(() => {
     verifyPlayer()
   }, [userAttribute])
@@ -44,9 +44,13 @@ function ClassMatching({ userAttribute }) {
   return (
     <div>
     <h1>Player Level UP to Character</h1>
-      {[...players].map((item, idx) => <h3 key={idx} onClick={() => displayClassInfo(idx)} className='ClassMatching-cursor'>
-        {item ? '👍' : null}{classCharacter[idx]}{item ? '👍' : null}
-        </h3>) }
+      {[...players].map((item, idx) => <h3 key={idx} onClick={() => displayCharacterInfo(idx)} className='App-cursor'>
+          {item ? '👍' : null}{classCharacter[idx]}{item ? '👍' : null}
+        </h3>)}
+      {characterEnable === '' ? null : <CharacterCard 
+        character={characterEnable}
+        attributes={CLASS_LIST[characterEnable]} 
+        setClose={setCharacterEnable} />}
   </div>)
 }
 

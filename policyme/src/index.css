@@ -22,6 +22,10 @@ code {
   padding: 1rem;
 }
 
+.App-cursor {
+  cursor: pointer;
+}
+
 .Attribute-group-container {
   display: inline;
 }
@@ -31,6 +35,13 @@ code {
   flex-direction: row;
 }
 
-.ClassMatching-cursor {
-  cursor: pointer;
+.modal {
+  width: 300px;
+  background: rgb(32, 31, 31);
+  border: 1px solid #ccc;
+}
+
+.content {
+    padding: 0 1rem;
+    color: whitesmoke;
 }

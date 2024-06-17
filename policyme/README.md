@@ -92,10 +92,11 @@ Character sheets are defined by the following high-level concepts
 TODO
 
 TASK  | TIME SPENT  
-Reading and understanding task, creating repo  | 30 min  
+Reading and understanding task, creating repo 
 1. Create a component Attribute and add icr/dec where each states indenpendent | 15min  
 2. Verify if array value, same or greater than CLASS_LIST  | 35min  
-3. Click in class, display alert with info | 10 min 1,30h  
+3. Click in class, display div with info + closing | 20 min  
 4. Each 2 points add/remove 2 | 20 min
+5. Implementing Skill - 30min
 
-Last 10 min to clean, comment, styling
+Last 10 min to clean, comment out, styling
