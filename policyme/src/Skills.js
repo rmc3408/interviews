@@ -1,13 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SKILL_LIST } from './consts.js';
 
 
 function Skills({ userModifier }) {
 
+  const [modifierSkill, setModifierSkill] = useState([])
+
+  const calculateSkillModifier = (pointsArr) => {
+    const skillArray = []
+    for (let attributePoint of pointsArr){
+      skillArray.push(10 + (4 * attributePoint))
+    }
+    setModifierSkill(skillArray)
+  }
   
   useEffect(() => { 
-    //make math based of userModifier
-    console.log(userModifier)
+    calculateSkillModifier(userModifier)
   }, [userModifier])
 
   return (
