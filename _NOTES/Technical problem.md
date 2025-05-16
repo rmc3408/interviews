@@ -1,0 +1,2 @@
+
+When i worked with digital market, We have a notification system which was online all the time and deploy in AWS 24/7. It was expensive to keep online at all time. I recommended to switch to online system with timer. After 3 days without activity, ask to user to login again and make the apllication scalable to user needs.

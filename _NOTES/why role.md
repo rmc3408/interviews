@@ -1,0 +1,6 @@
+
+The opportunity to leverage my 4 years of experience in Typescript/Javascript, DevOps CI/CD, and API formats such as GraphQL or gRPC, and my leadership experience present an ideal environment for Moveble ink. My skills align perfectly with Movable Ink's focus on innovative and I feel excited to contribute significantly to projects that drive user engagement and deliver exceptional results for clients. All those reason, it will enhance my skills and grow professionally in a dynamic industry.
+
+-----
+
+The opportunity to leverage my 4+ years of experience in React / NextJs and work in the backedn buiding API calls with best coding practices documenting, reviewing and QA processes. Noteworthy, I have team and leadership experience which an ideal environment for Knix. My skills align perfectly with Knix focus on innovative and I feel excited to contribute significantly to projects that drive a easy customer engagement and deliver exceptional results for clients. All those reason, it will enhance my skills and grow professionally in a dynamic industry.
