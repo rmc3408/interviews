@@ -1,0 +1,5 @@
+To Hiring manager,
+
+I would like to apply for the Web Developer role. I believe I am an excellent fit for this position, as I have 5 years of full-time work experience with all the required technologies, including creating customizable CMS pages and a strong passion for A/B testing. Additionally, I have experience as a tech team leader and product manager, where I have built, planned, and engaged teams—gathering requirements, creating user stories, and delivering high-quality user experiences on time while maintaining internal code standards.
+
+As proof of my commitment, I can provide reference letters from my product manager, tech leader, and others. Notably, I do not require sponsorship in the future, as I am a Canadian citizen residing in Toronto, which is ideal for either an on-site or remote environment. Please feel free to contact me at molinaro.raphael@gmail.com or +1 (647) 838-9921. I look forward to the opportunity to discuss my skills with you.
