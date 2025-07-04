@@ -1,0 +1,16 @@
+bin/
+obj/
+*.user
+*.suo
+*.sln.docstates
+*.userprefs
+*.pidb
+*.DS_Store
+.vs/
+.vscode/
+packages/
+TestResults/
+*.log
+*.tmp
+*.bak
+appsettings.Production.json
